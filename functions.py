@@ -33,7 +33,7 @@ def open_serial_port():
 
     if(port_path != ""):
         port = Serial(port_path, 9600, timeout=0)
-        while(port.in_waiting() <= 0):
+        while(port.inWaiting() <= 0):
             pass
         port.read()
         return port

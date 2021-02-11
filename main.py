@@ -1,13 +1,13 @@
 import time
 from serial import Serial
-import class_definitions
+import class_definitions as cd
 import functions as f
 
 if __name__ == '__main__':
     port = f.open_serial_port()
 
     if(port != None):
-        timesheet = timesheet()
+        timesheet = cd.timesheet()
         timesheet.load_from_file("timesheet.txt")
        
         current_time = time.localtime()
