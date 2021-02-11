@@ -27,7 +27,7 @@ if __name__ == '__main__':
             time_num = current_time.tm_hour*100 + current_time.tm_min
             if time_num >= next_time:
                 print("event reached")
-                if (time_slot > (len(timesheet.times) - 1)):
+                if (time_slot < (len(timesheet.times) - 1)):
                     time_slot += 1
                 else:
                     time_slot = 0
