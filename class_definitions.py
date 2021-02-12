@@ -1,11 +1,7 @@
-class time_state_schedule:
+class timesheet:
     def __init__(self, times=[], states=[]):
         self.times = times
         self.states = states
-
-class timesheet(time_state_schedule):
-    def __init__(self, times=[], states=[]):
-        time_state_schedule.__init__(self, times, states)
 
     def load_from_file(self, file_name):
         input_file = open(file_name, 'r')
