@@ -28,14 +28,17 @@ def find_port_auto():
     
     return str(output)
 
+def wait_until_ready(port):
+        while(port.inWaiting() <= 0):
+            pass
+        port.read()
+
 def open_serial_port():
     port_path = find_port_auto()
 
     if(port_path != ""):
         port = Serial(port_path, 9600, timeout=0)
-        while(port.inWaiting() <= 0):
-            pass
-        port.read()
+        wait_until_ready(port)
         return port
     else:
         return None

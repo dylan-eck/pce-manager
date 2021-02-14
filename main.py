@@ -33,6 +33,7 @@ if __name__ == '__main__':
                 next_time = timesheet.times[time_slot + 1]
                 print("new state:", current_state)
                 print("next time:", next_time, '\n')
+                wait_until_ready(port)
                 port.write(chr(current_state).encode())
             time.sleep(0.5)
     else:
